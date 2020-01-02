@@ -1,24 +1,51 @@
 .sidenav-container {
   height: 100%;
-  background: rgb(216, 246, 255);
-}
-
-.sidenav {
-  width: 100px;
-  text-align: center;
 }
 
 .sidenav .mat-toolbar {
+  width: 100px;
   background: inherit;
+  overflow: hidden;
+  transition: width .5s;
 }
 
 .mat-toolbar .mat-primary {
+  justify-content: center;
   position: sticky;
   top: 0;
   z-index: 1;
 }
 
-.mat-sidenav-content {
-  margin: auto;
-  text-align: center;
+.mat-toolbar {
+  justify-content: center;
 }
+
+.mat-nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+  .mat-list-item {
+    .description {
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:hover .description {
+      opacity: 1;
+      visibility: visible;
+    }
+    :hover {
+      width: fit-content;
+    }
+  }
+}
+
+// .description {
+//   visibility: hidden;
+//   transition: visibility 0.5s;
+// }
+
+// .mat-list-item:hover .description {
+//   visibility: visible;
+// }
